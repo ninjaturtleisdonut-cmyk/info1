@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Word Check</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  #result {
+    margin-top: 30px;
+    font-size: 2rem;
+    display: none;
+  }
+
+  #red-line {
+    width: 200px;
+    height: 5px;
+    background: red;
+    margin: 20px auto 0 auto;
+    display: none;
+  }
+
+  #rainbow {
+    width: 200px;
+    height: 10px;
+    margin: 0 auto;
+    background: linear-gradient(
+      to right,
+      red, orange, yellow, green, cyan, blue, violet
+    );
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<h2>Enter the 7-letter word:</h2>
+
+<input id="wordInput" maxlength="7" />
+<button onclick="checkWord()">Submit</button>
+
+<div id="red-line"></div>
+<div id="rainbow"></div>
+<div id="result">Notion</div>
+
+<script>
+function checkWord() {
+  const word = document.getElementById("wordInput").value.trim().toLowerCase();
+
+  if (word === "awesome") {
+    document.getElementById("red-line").style.display = "block";
+    document.getElementById("rainbow").style.display = "block";
+    document.getElementById("result").style.display = "block";
+  } else {
+    document.getElementById("red-line").style.display = "none";
+    document.getElementById("rainbow").style.display = "none";
+    document.getElementById("result").style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
